@@ -2,31 +2,31 @@ import java.lang.reflect.Array;
 import java.util.*;
 public class Course<T> {
 	private String courseName;
-    private T[] students;
-    private int numberOfStudents;
+	private T[] students;
+	private int numberOfStudents;
 	Class<T> clas;
 
-    public String getCourseName() { return courseName; }
-    public T[] getStudents() { return students; }
-    public int getNumberOfStudents() { return numberOfStudents; }
+	public String getCourseName() { return courseName; }
+	public T[] getStudents() { return students; }
+	public int getNumberOfStudents() { return numberOfStudents; }
 
-    public Course(String courseName, Class<T> clas) {
+	public Course(String courseName, Class<T> clas) {
 		this.courseName = courseName;
-        numberOfStudents = 0;
+		numberOfStudents = 0;
 		//students = new T[0];
 		this.clas = clas;
 		students = (T[]) Array.newInstance(clas, 0);
-    }
+	}
 
-    public void addStudent(T student) {
-        numberOfStudents++;
+	public void addStudent(T student) {
+		numberOfStudents++;
 		ArrayList<T> studs = new ArrayList<T>(Arrays.asList(students));
 		studs.add(student);
 		//students = new T[numberOfStudents];
 		students = (T[]) Array.newInstance(clas, numberOfStudents);
-        for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
-    }
-    public void dropStudent(T student) {
+		for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
+	}
+	public void dropStudent(T student) {
 		numberOfStudents--;
 		ArrayList<T> studs = new ArrayList<T>(Arrays.asList(students));
 		studs.remove(student);
