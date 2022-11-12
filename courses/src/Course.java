@@ -1,27 +1,27 @@
 import java.util.*;
 public class Course {
 	private String courseName;
-    private String[] students;
-    private int numberOfStudents;
+	private String[] students;
+	private int numberOfStudents;
 
-    public String getCourseName() { return courseName; }
-    public String[] getStudents() { return students; }
-    public int getNumberOfStudents() { return numberOfStudents; }
+	public String getCourseName() { return courseName; }
+	public String[] getStudents() { return students; }
+	public int getNumberOfStudents() { return numberOfStudents; }
 
-    public Course(String courseName) {
-        numberOfStudents = 0;
-        this.courseName = courseName;
+	public Course(String courseName) {
+		numberOfStudents = 0;
+		this.courseName = courseName;
 		students = new String[0];
-    }
+	}
 
-    public void addStudent(String student) {
-        numberOfStudents++;
+	public void addStudent(String student) {
+		numberOfStudents++;
 		ArrayList<String> studs = new ArrayList<String>(Arrays.asList(students));
 		studs.add(student);
-        students = new String[numberOfStudents];
-        for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
+		students = new String[numberOfStudents];
+		for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
     }
-    public void dropStudent(String student) {
+	public void dropStudent(String student) {
 		numberOfStudents--;
 		ArrayList<String> studs = new ArrayList<String>(Arrays.asList(students));
 		studs.remove(student);
