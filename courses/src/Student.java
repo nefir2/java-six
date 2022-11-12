@@ -27,5 +27,14 @@ public class Student {
 	}
 
 	@Override
-	public String toString() { return "студент: " + name + surname + ".\nгруппа: " + group + "\nкурс: " + grade; }
+	public String toString() {
+		return
+			(name == null ? "-" : name) +
+			" " +
+			(surname == null ? "-" : surname) +
+			". группа: " +
+			(group == null ? "-" : group) +
+			". курс: " +
+			(grade == null ? "-" : grade); //\n
+	}
 }
