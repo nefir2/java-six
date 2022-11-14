@@ -43,8 +43,8 @@ public class Course {
 	@Override
 	public String toString() {
 		String ret = "Количество студентов по дисциплине " + courseName + ": " + numberOfStudents;
-		ret = ret.concat("\nстуденты на курсе: ");
-		for (int i = 0; i < numberOfStudents; i++) ret = ret.concat(students[i] + (i == numberOfStudents - 1 ? ".\n" : ", "));
+		ret = ret.concat("\nстуденты на курсе:\n");
+		for (int i = 0; i < numberOfStudents; i++) ret = ret.concat(students[i] + (i == numberOfStudents - 1 ? ".\n" : ",\n"));
 		return ret;
 	}
 }
