@@ -18,8 +18,9 @@ public class Course {
 		numberOfStudents++;
 		ArrayList<String> studs = new ArrayList<String>(Arrays.asList(students));
 		studs.add(student);
-		students = new String[numberOfStudents];
-		for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
+		students = studs.toArray(new String[0]);
+		//students = new String[numberOfStudents];
+		//for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
     }
 	public void dropStudent(String student) {
 		numberOfStudents--;
