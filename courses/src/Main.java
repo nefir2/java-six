@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
+	private String[] array = new String[100];
 	public static void main(String[] args) {
 		Course course = new Course("\"основы программирования\"");
 
@@ -11,5 +15,10 @@ public class Main {
 		course.dropStudent(second); //"какой-та второй нн"
 
 		System.out.println(course);
+	}
+	public static void fignyakakayata(){
+		String[] a = new String[] { "", "", "" };
+		ArrayList<String> x = new ArrayList<String>(Arrays.asList(a));
+		a = x.toArray(new String[0]);
 	}
 }
