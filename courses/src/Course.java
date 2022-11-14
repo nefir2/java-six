@@ -1,39 +1,39 @@
 import java.util.*;
 public class Course {
 	private String courseName;
-	private String[] students;
+	private Student[] students;
 	private int numberOfStudents;
 
 	public String getCourseName() { return courseName; }
-	public String[] getStudents() { return students; }
+	public Student[] getStudents() { return students; }
 	public int getNumberOfStudents() { return numberOfStudents; }
 
 	public Course(String courseName) {
 		numberOfStudents = 0;
 		this.courseName = courseName;
-		students = new String[0];
+		students = new Student[0];
 	}
 
-	public void addStudent(String student) {
+	public void addStudent(Student student) {
 		numberOfStudents++;
-		ArrayList<String> studs = new ArrayList<String>(Arrays.asList(students));
+		ArrayList<Student> studs = new ArrayList<Student>(Arrays.asList(students));
 		studs.add(student);
-		students = new String[numberOfStudents];
+		students = new Student[numberOfStudents];
 		for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
     }
-	public void dropStudent(String student) {
+	public void dropStudent(Student student) {
 		numberOfStudents--;
-		ArrayList<String> studs = new ArrayList<String>(Arrays.asList(students));
+		ArrayList<Student> studs = new ArrayList<Student>(Arrays.asList(students));
 		studs.remove(student);
-		students = new String[numberOfStudents];
+		students = new Student[numberOfStudents];
 		for (int i = 0; i < numberOfStudents; i++) students[i] = studs.get(i);
 	}
 
-	public void addStudent(String... students) { for (String student : students) addStudent(student); }
-	public void dropStudent(String... students) { for (String student : students) dropStudent(student); }
+	public void addStudent(Student... students) { for (Student student : students) addStudent(student); }
+	public void dropStudent(Student... students) { for (Student student : students) dropStudent(student); }
 
 	public void clear() {
-		students = new String[0];
+		students = new Student[0];
 		numberOfStudents = 0;
 	}
 
